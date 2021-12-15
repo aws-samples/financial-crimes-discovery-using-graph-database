@@ -1,0 +1,6 @@
+set output $(1)
+set query.answer-format "application/n-triples"
+answer $(2)
+# Return to previous values
+set output out
+set query.answer-format "application/n-triples"

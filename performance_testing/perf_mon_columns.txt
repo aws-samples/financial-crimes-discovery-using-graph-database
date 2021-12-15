@@ -1,0 +1,2 @@
+NAME    STATUS_RDFOX  CORES   MEMORY ENV  STARTTIME NODE
+metadata.name   status.phase  spec.containers[?(@.name=="rdfox-container")].resources.requests.cpu   spec.containers[?(@.name=="rdfox-container")].resources.requests.memory  spec.containers[0].env[0].value   status.startTime    spec.nodeName

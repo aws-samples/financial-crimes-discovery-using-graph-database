@@ -1,0 +1,71 @@
+{
+    "DBClusters": [
+        {
+            "AllocatedStorage": 1,
+            "AvailabilityZones": [
+                "ap-southeast-1c",
+                "ap-southeast-1b",
+                "ap-southeast-1a"
+            ],
+            "BackupRetentionPeriod": 5,
+            "DBClusterIdentifier": "neptune",
+            "DBClusterParameterGroup": "example",
+            "DBSubnetGroup": "main",
+            "Status": "available",
+            "EarliestRestorableTime": "2021, 8, 5, 7, 5, 44, 805000",
+            "Endpoint": "neptune.clusterLALAAL",
+            "ReaderEndpoint": "neptune.clusterLALAALRO",
+            "MultiAZ": false,
+            "Engine": "neptune",
+            "EngineVersion": "1.0.4.2",
+            "LatestRestorableTime": "2021, 8, 11, 4, 5, 21, 923000",
+            "Port": 8182,
+            "MasterUsername": "admin",
+            "PreferredBackupWindow": "07:00-09:00",
+            "PreferredMaintenanceWindow": "sun:17:25-sun:17:55",
+            "ReadReplicaIdentifiers": [],
+            "DBClusterMembers": [
+                {
+                    "DBInstanceIdentifier": "Somemagicalthing",
+                    "IsClusterWriter": true,
+                    "DBClusterParameterGroupStatus": "in-sync",
+                    "PromotionTier": 0
+                }
+            ],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-xyz",
+                    "Status": "active"
+                }
+            ],
+            "HostedZoneId": "Z21O9Z5BF9DIN9",
+            "StorageEncrypted": true,
+            "KmsKeyId": "arn:aws:kms:lah",
+            "DbClusterResourceId": "cluster-XYZ",
+            "DBClusterArn": "arn:aws:rds:ap-southeast-1:something",
+            "AssociatedRoles": [
+                {
+                    "RoleArn": "arn:aws:iam::01234567890:xlol",
+                    "Status": "ACTIVE"
+                }
+            ],
+            "IAMDatabaseAuthenticationEnabled": true,
+            "ClusterCreateTime": "2021, 6, 22, 5, 2, 42, 495000",
+            "CopyTagsToSnapshot": false,
+            "DeletionProtection": false,
+            "CrossAccountClone": false
+        }
+    ],
+    "ResponseMetadata": {
+        "RequestId": "xyz",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amzn-requestid": "xyz",
+            "content-type": "text/xml",
+            "content-length": "3574",
+            "vary": "accept-encoding",
+            "date": "Wed, 11 Aug 2021 04:06:51 GMT"
+        },
+        "RetryAttempts": 0
+    }
+}

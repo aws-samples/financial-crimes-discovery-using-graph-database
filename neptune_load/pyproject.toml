@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "neptune_load"
+version = "0.1.3"
+description = ""
+authors = ["Sev <sev@amazon.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+boto3 = "^1.17.98"
+requests = "^2.25.1"
+pytest = "^6.2.4"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.9.1"
+pyexpect = "^1.0.21"
+pytest-watch = "^4.2.0"
+pytest = "^6.2.4"
+unittest = "^0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

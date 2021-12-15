@@ -1,0 +1,4 @@
+key="terraform.tfstate"
+session_name="graphreasoning_deployment_session"
+encrypt="true"
+dynamodb_table="terraform-state-lock"

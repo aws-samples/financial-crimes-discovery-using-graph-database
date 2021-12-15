@@ -1,0 +1,11 @@
+// Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
+
+{
+    "deployment_role": "EngagementAdmin",
+    "target_account": "",
+    "target_region": "ap-southeast-1",
+    "account_alias": ""
+  }
+  

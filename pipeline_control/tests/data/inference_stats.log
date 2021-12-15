@@ -1,0 +1,91 @@
+A new server connection was opened as role 'ADMIN' and stored with name 'sc1'.
+Script name is missing.
+Prefix name ':' was declared as <http://oxfordsemantic.tech/transactions/entities#>.
+Prefix name 'prop:' was declared as <http://oxfordsemantic.tech/transactions/properties#>.
+Prefix name 'type:' was declared as <http://oxfordsemantic.tech/transactions/classes#>.
+Prefix name 'tt:' was declared as <http://oxfordsemantic.tech/transactions/tupletables#>.
+output = "out"
+A new data store 'transactions' was created and initialized.
+Data store connection 'transactions' is active.
+dir.output = "/output/"
+dir.queries = "/data/"
+dir.scripts = "/scripts/"
+A read/write transaction has been started on data store connection 'transactions'.
+Adding data in file '/data/exited-chains.dlog'.
+Import operation took 0.008 s.
+Processed 4 rules, of which 4 were updated.
+Adding data in 305 files.
+Import operation took 250 s.
+Processed 655822120 facts, of which 510506725 were updated.
+LOADTIME-30-Jul-2021 19:41:03|30-Jul-2021 19:45:17
+Materializing rules.
+Rules will be processed by strata.
+Materialization time:      1617.16 s.
+--------------------------------------------------------------------------------------------------------------------------
+Table                                            |  Entries                     |  EDB               |  IDB             
+--------------------------------------------------------------------------------------------------------------------------
+http://oxfordsemantic.tech/RDFox#DefaultTriples  |  510,584,321 -> 787,840,001  |  0 -> 510,506,725  |  0 -> 787,421,291
+--------------------------------------------------------------------------------------------------------------------------
+The transaction on data store connection 'transactions' has been committed.
+INFERENCETIME-30-Jul-2021 19:45:17|30-Jul-2021 20:12:18
+output = "/output/extract1.rq.nt"
+query.answer-format = "application/n-triples"
+Answering query from file:   /data/extract1.rq
+Output will be printed to file "/output/extract1.rq.nt".
+Number of returned tuples:   15157104
+Total number of answers:     15157104
+Total statement evaluation time: 35.3 s
+output = "out"
+query.answer-format = "application/n-triples"
+output = "/output/extract3.rq.nt"
+query.answer-format = "application/n-triples"
+Answering query from file:   /data/extract3.rq
+Output will be printed to file "/output/extract3.rq.nt".
+Number of returned tuples:   1659850615
+Total number of answers:     1659850615
+Total statement evaluation time: 3.64e+03 s
+output = "out"
+query.answer-format = "application/n-triples"
+QUERYTIME-30-Jul-2021 20:12:18|30-Jul-2021 21:24:53
+---info---
+
+
+  ::RDFStore
+---------------------------------------------------------------------
+    Name                           :  transactions
+    ID                             :               0     (  0    )
+    Unique ID                      :  18225196492841182561
+    Data store version             :               2     (  2    )
+    End resource ID                :   4,294,967,295     (  4.2 G)
+    Concurrent                     :  yes
+    Persistent                     :  no
+    Equality axiomatization mode   :  off
+    Requires incremental reasoning :  yes
+    Aggregate size                 :  80,273,916,922     ( 80.2 G)
+    Aggregate number of entries    :     787,840,001     (787.8 M)
+    Bytes per entry                :             101.891
+    Aggregate number of EDB facts  :     510,506,725     (510.5 M)
+    Aggregate number of IDB facts  :     787,421,291     (787.4 M)
+    Dictionary size (%)            :              48.354
+    Equality manager size (%)      :               0     (  0    )
+    Rule index size (%)            :               0     (  0    )
+    Facts size (%)                 :              51.645
+---endinfo---
+TOTALTIME-30-Jul-2021 19:41:03|30-Jul-2021 20:12:18
+running-counts
+output = "out"
+query.answer-format = "text/csv"
+partialChainCount
+1337
+Number of returned tuples:   1
+Total number of answers:     1
+Total statement evaluation time: 0.001 s
+2nd-query
+fullChainCount
+2667
+Number of returned tuples:   1
+Total number of answers:     1
+Total statement evaluation time: 0 s
+end-running-counts
+The REST endpoint was successfully started at port number/service name 12110 with 127 threads.
+

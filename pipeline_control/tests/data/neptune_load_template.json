@@ -1,0 +1,29 @@
+{
+    "status": "200 OK",
+    "payload": {
+        "feedCount": [
+            {
+                "LOAD_COMPLETED": 4
+            }
+        ],
+        "overallStatus": {
+            "fullUri": "s3://TEST_BUCKET/100MT1MP3DAY/100MT1MP3DAY_2021-08-03_001/data/",
+            "runNumber": 1,
+            "retryNumber": 0,
+            "status": "LOAD_COMPLETED",
+            "totalTimeSpent": 3014,
+            "startTime": 1627997946,
+            "totalRecords": 41220091,
+            "totalDuplicates": 15957104,
+            "parsingErrors": 0,
+            "datatypeMismatchErrors": 0,
+            "insertErrors": 0
+        },
+        "errors": {
+            "startIndex": 0,
+            "endIndex": 0,
+            "loadId": "a1cac8fa-ad02-4e28-9dc6-12f3e7b57ff8",
+            "errorLogs": []
+        }
+    }
+}

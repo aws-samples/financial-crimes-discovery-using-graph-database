@@ -1,0 +1,103 @@
+{
+    "DBInstances": [
+        {
+            "DBInstanceIdentifier": "something",
+            "DBInstanceClass": "db.r5d.8xlarge",
+            "Engine": "neptune",
+            "DBInstanceStatus": "available",
+            "MasterUsername": "admin",
+            "Endpoint": {
+                "Address": "something",
+                "Port": 8182,
+                "HostedZoneId": "Z21O9Z5BF9DIN9"
+            },
+            "AllocatedStorage": 1,
+            "InstanceCreateTime": "2021, 6, 22, 5, 15, 55, 971000",
+            "PreferredBackupWindow": "07:00-09:00",
+            "BackupRetentionPeriod": 5,
+            "DBSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-01b459ae07756482a",
+                    "Status": "active"
+                }
+            ],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "default.neptune1",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AvailabilityZone": "ap-southeast-1a",
+            "DBSubnetGroup": {
+                "DBSubnetGroupName": "main",
+                "DBSubnetGroupDescription": "Managed by Terraform",
+                "VpcId": "vpc-xyz",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-xyz",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-southeast-1c"
+                        },
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-abc",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-southeast-1b"
+                        },
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-def",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-southeast-1a"
+                        },
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "fri:16:32-fri:17:02",
+            "PendingModifiedValues": {},
+            "MultiAZ": false,
+            "EngineVersion": "1.0.4.2",
+            "AutoMinorVersionUpgrade": true,
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "LicenseModel": "amazon-license",
+            "OptionGroupMemberships": [
+                {
+                    "OptionGroupName": "default:neptune-1-0",
+                    "Status": "in-sync"
+                }
+            ],
+            "PubliclyAccessible": false,
+            "StorageType": "aurora",
+            "DbInstancePort": 0,
+            "DBClusterIdentifier": "neptune",
+            "StorageEncrypted": true,
+            "KmsKeyId": "arn:aws:kms:ap-southeast-1:blablah",
+            "DbiResourceId": "db-HMPF",
+            "DomainMemberships": [],
+            "CopyTagsToSnapshot": false,
+            "MonitoringInterval": 0,
+            "PromotionTier": 0,
+            "DBInstanceArn": "arn:aws:rds:ap-southeast-1:ladida",
+            "IAMDatabaseAuthenticationEnabled": true,
+            "PerformanceInsightsEnabled": false,
+            "DeletionProtection": false
+        }
+    ],
+    "ResponseMetadata": {
+        "RequestId": "04eae694-999999999999999999999999999",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amzn-requestid": "04eae694-77777777777777777777",
+            "content-type": "text/xml",
+            "content-length": "4772",
+            "vary": "accept-encoding",
+            "date": "Wed, 11 Aug 2021 03:15:46 GMT"
+        },
+        "RetryAttempts": 0
+    }
+}
