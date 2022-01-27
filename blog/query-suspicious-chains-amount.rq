@@ -1,0 +1,9 @@
+PREFIX : <http://oxfordsemantic.tech/transactions/entities#>
+PREFIX prop: <http://oxfordsemantic.tech/transactions/properties#>
+PREFIX type: <http://oxfordsemantic.tech/transactions/classes#>
+PREFIX tt: <http://oxfordsemantic.tech/transactions/tupletables#>
+
+SELECT ?S ?P ?O WHERE {
+            ?S a type:HighValueChain .
+            ?S ?P ?O .
+}

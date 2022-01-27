@@ -1,0 +1,64 @@
+base <http://oxfordsemantic.tech/transactions/>
+
+# creating the nodes that has origin of suspicious party
+[?chain, a, type:PartialChain],
+[?chain, prop:hasOriginator, ?originator],
+[?chain, prop:hasBeneficiary, ?beneficiary],
+[?chain, prop:hasStartingAmount, ?amount],
+[?chain, prop:hasFinalAmount, ?amount],
+[?chain, prop:hasLength, 1],
+[?chain, prop:hasEndDate, ?transactionDate],
+[?chain, prop:containsTransaction, ?transaction] :-
+    [?transaction, a, type:Transaction],
+    [?transaction, prop:hasOriginator, ?originator],
+    [?transaction, prop:hasBeneficiary, ?beneficiary],
+    [?transaction, prop:hasAmount, ?amount],
+    [?transaction, prop:hasDate, ?transactionDate],
+    [?originator, prop:isSuspicious, true],
+    BIND(IRI(MD5(CONCAT("PartialChain", STR(?transaction)))) as ?chain) .
+
+# create nodes that represent the partial chains 
+[?chain, a, type:PartialChain],
+[?chain, prop:hasOriginator, ?oldChainOriginator],
+[?chain, prop:hasBeneficiary, ?transactionBeneficiary],
+[?chain, prop:derivedFrom, ?oldChain],
+[?chain, prop:hasLength, ?newLength],
+[?chain, prop:containsTransaction, ?transaction] :-
+    [?oldChain, a, type:PartialChain],
+    [?oldChain, prop:hasOriginator, ?oldChainOriginator],
+    [?oldChain, prop:hasBeneficiary, ?oldChainBeneficiary],
+    [?oldChain, prop:hasEndDate, ?oldChainDate],
+    [?oldChain, prop:hasLength, ?oldLength],
+    [?transaction, a, type:Transaction],
+    [?transaction, prop:hasOriginator, ?oldChainBeneficiary],
+    [?transaction, prop:hasBeneficiary, ?transactionBeneficiary],
+    [?transaction, prop:hasDate, ?transactionDate],
+    FILTER(?oldChainDate<?transactionDate),         # filter chronological order chains only
+    FILTER(?oldLength < 30),                        # ensure no infinite cycles
+    BIND(?oldLength + 1 AS ?newLength),
+    BIND(IRI(MD5(CONCAT("PartialChain",STR(?oldChain), STR(?transaction)))) as ?chain) .
+
+# connecting the chains
+[?chain, prop:containsTransaction, ?transaction] :-
+    [?chain, a, type:PartialChain],
+    [?chain, prop:derivedFrom, ?oldChain],
+    [?oldChain, prop:containsTransaction, ?transaction] .
+
+# tagging the chains with another suspicious party
+[?chain, a, type:SuspiciousChain] :-
+    [?chain, a, type:PartialChain],
+    [?chain, prop:hasBeneficiary, ?beneficiary],
+    [?beneficiary, prop:isSuspicious, true] .
+
+# tagging the chains with a minimum amount of $100
+[?chain, a, type:HighValueChain] :-
+	AGGREGATE(
+		[?chain, a , type:SuspiciousChain],
+		[?chain, prop:containsTransaction, ?transaction],
+		[?transaction, prop:hasAmount, ?amount]
+		ON ?chain
+		BIND MIN(?amount) as ?minimumAmount
+	),
+	FILTER(?minimumAmount > 100) .
+
+
